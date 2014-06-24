@@ -1,22 +1,14 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
-  padding-top: 50px;
-}
-.navbar-logo{
-  float: left;
-  padding: 0;
-  font-size: 18px;
-  line-height: 20px;
-  height: 20px;
-}
-.logo {
-  display: inline-block;
-  background: url('/assets/images/dotJEMLogo2.svg') no-repeat 0 0;
 
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
+
+.navbar {
+  .navbar-logo{
+    float: left;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+    height: 20px;
+  }
 }
 
 .logo.small{
@@ -31,35 +23,16 @@ body {
 .copyright{
   font-size: 16px;
 }
-.banding{
-  background-color: #eee;
-}
-.jumbotron{
-  padding: 10px;
-  margin-bottom: 0px;
-}
-.jumbotron.light,
-.banding.light {
-  background-color: #fff;
-}
-.jumbotron.dark,
-.banding.dark {
-  background-color: #444;
-  color: #eee;
-}
-.jumbotron.orange,
-.banding.orange {
-  background-color: #c60;
-}
-
-.dark code { background-color: #524C4E; }
-.jumbotron code { background-color: #E4DEE0; }
 
 .page-footer{
   margin-bottom: 0px;
   padding: 5px;
   background-color: #444;
   color: #eee;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 hr {
@@ -89,6 +62,7 @@ dl.medium dd { margin-left: 120px; }
 .bs-callout-warning h4 { color: #f0ad4e; }
 .bs-callout-info { background-color: #f4f8fa; border-color: #5bc0de; }
 .bs-callout-info h4 { color: #5bc0de; }
+
 @media (max-width: 992px) {
   .navbar-logo .navbar-brand { display: none; }
 }

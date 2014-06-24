@@ -1,15 +1,17 @@
 @import "bootstrap/variables";
 
+@import "dotjemcolors";
+
 $gray-darker: lighten(#000, 13.5%);
 $gray-dark: lighten(#000, 20%);
 $gray: lighten(#000, 33.5%);
 $gray-light: lighten(#000, 60%);
 $gray-lighter: lighten(#000, 93.5%);
-$brand-primary: #428bca;
-$brand-success: #00E746;
-$brand-info: #009FDC;
-$brand-warning: #FF8500;
-$brand-danger: #FF2300;
+//$brand-primary: #428bca;
+//$brand-success: #00E746;
+//$brand-info: #009FDC;
+//$brand-warning: #FF8500;
+//$brand-danger: #FF2300;
 $body-bg: #fefefe;
 $text-color: #111;
 $link-color: $brand-primary;

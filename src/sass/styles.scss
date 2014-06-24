@@ -5,4 +5,17 @@
 @import "dotjemvars";
 @import "bootstrap";
 
+body {
+  padding-top: 50px;
+  padding-bottom: 32px;
+}
+
+.logo {
+  display: inline-block;
+  background: url('/assets/images/dotJEMLogo2.svg') no-repeat 0 0;
+  @include background-size(contain);
+}
+
 @import "core/navbar";
+@import "dxsample/dxsample";
+@import "dxsyntax/dxsyntax";
