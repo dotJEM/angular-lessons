@@ -7,33 +7,9 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        banner: "", //grunt.file.read('../banner'),
+        banner: "",
         clean: {
             src: ['build']
-        },
-
-        typescript: {
-            dev: {
-                src: ['scripts/**/*.ts'],
-                options: {
-                    module: 'commonjs',
-                    target: 'es5',
-                    sourcemap: true,
-                    declaration: false,
-                    comments: true
-                }
-            },
-            build: {
-                src: ['src/client/**/*.ts'],
-                dest: 'build',
-                options: {
-                    module: 'commonjs',
-                    target: 'es5',
-                    sourcemap: false,
-                    declaration: false,
-                    comments: false
-                }
-            }
         },
 
         connect: {
@@ -67,7 +43,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-compress');
-    grunt.loadNpmTasks('grunt-typescript');
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-ngdocs');
     grunt.loadNpmTasks('grunt-tslint');
