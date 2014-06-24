@@ -1,0 +1,5 @@
+E:\ODISS\ODISS_3.0.0-beta.10\ODISS3\env\Scripts\bin\Debug\Scripts.pdb
+E:\ODISS\ODISS_3.0.0-beta.10\ODISS3\env\Scripts\obj\Debug\Scripts.pdb
+E:\ODISS\ODISS_3.0.0-beta.10\ODISS3\env\Scripts\bin\Debug\Scripts.exe
+E:\ODISS\ODISS_3.0.0-beta.10\ODISS3\env\Scripts\obj\Debug\Scripts.exe
+E:\ODISS\ODISS_3.0.0-beta.10\ODISS3\env\Scripts\obj\Debug\Scripts.csprojResolveAssemblyReference.cache
