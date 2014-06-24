@@ -26,18 +26,21 @@
   margin-bottom: 20px;
   margin-left: -20px;
 
-  > li > a {
-    font-size: 16px;
-    padding-right: 20px;
-    padding-left: 20px;
-    color: $text-color;
-  }
-}
+  li {
+    a {
+      font-size: 16px;
+      padding-right: 20px;
+      padding-left: 20px;
+      color: $text-color;
+    }
 
-.nav-sidebar
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: $brand-primary;
+    &.active {
+      a,
+      a:hover,
+      a:focus {
+        color: #fff;
+        background: $brand-primary !important;
+      }
+    }
+  }
 }

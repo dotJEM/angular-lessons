@@ -45,7 +45,7 @@ angular.module('dotjem.lessons')
             route: '/formatters-and-parsers',
             views: {
                 content: {
-                    template: 'assets/templates/lessons/form-validation/custom-editor-directives/custom-editor-directives.html'
+                    template: 'assets/templates/lessons/form-validation/custom-formatters-and-parsers/custom-formatters-and-parsers.html'
                 }
             }
         });
