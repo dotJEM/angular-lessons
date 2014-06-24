@@ -57,7 +57,7 @@ angular.module('dotjem.lessons')
             restrict: 'ECA',
             transclude: true,
             controller: 'dxSampleController',
-            templateUrl: '/templates/directives/dxSampleTemplate.html',
+            templateUrl: '/assets/templates/directives/dxSampleTemplate.html',
             scope: {}
         };
     }
