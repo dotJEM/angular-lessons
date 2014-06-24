@@ -1,5 +1,4 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
-
+@import "../dotjemvars";
 
 .navbar {
   .navbar-logo{
@@ -12,7 +11,16 @@
 
   .navbar-nav>li>a{
     padding-top: 17px;
-    padding-bottom: 10px;
+    padding-bottom: 13px;
+  }
+
+  .spacer-vertical {
+    height: 50px;
+    margin: 0 20px;
+  }
+
+  &.navbar-fixed-top {
+    border: 0;
   }
 }
 
@@ -25,9 +33,6 @@
   width: 120px;
   vertical-align: text-top;
 }
-.copyright{
-  font-size: 16px;
-}
 
 .page-footer{
   margin-bottom: 0px;
@@ -38,14 +43,11 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+  z-index: 1001;
 
-hr {
-  height: 1px;
-  border: 0;
-  color: #c60;
-  background: #c60;
-  margin: 5px 0;
+  .copyright{
+    font-size: 16px;
+  }
 }
 
 dl.narrow dt { width: 60px; }
@@ -54,20 +56,6 @@ dl.narrow dd { margin-left: 80px; }
 dl.medium dt { width: 100px; }
 dl.medium dd { margin-left: 120px; }
 
-.bs-callout { margin: 20px 0; padding: 20px; border-left: 3px solid #eee; }
-.bs-callout h4 { margin-top: 0; margin-bottom: 5px; font-weight: bold; }
-.bs-callout p:last-child { margin-bottom: 0; }
-.bs-callout code,
-.bs-callout .highlight { background-color: #fff; }
-
-/* Themes for different contexts */
-.bs-callout-danger { background-color: #fdf7f7; border-color: #d9534f; }
-.bs-callout-danger h4 { color: #d9534f; }
-.bs-callout-warning { background-color: #fcf8f2; border-color: #f0ad4e; }
-.bs-callout-warning h4 { color: #f0ad4e; }
-.bs-callout-info { background-color: #f4f8fa; border-color: #5bc0de; }
-.bs-callout-info h4 { color: #5bc0de; }
-
 @media (max-width: 992px) {
   .navbar-logo .navbar-brand { display: none; }
 }
@@ -75,6 +63,9 @@ dl.medium dd { margin-left: 120px; }
 @media (max-width: 767px) {
   .logo.large{ height: 50px; width: 65px; }
   .navbar-logo .navbar-brand { display: block; }
+  .navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
 }
 
 @media (max-width: 500px) {
