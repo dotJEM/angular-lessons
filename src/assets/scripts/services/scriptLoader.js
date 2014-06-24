@@ -1,6 +1,5 @@
-/// <reference path="../_references.d.ts" />
-
-angular.module('dotjem.routing.pages').service('scriptLoader', [function () {
+angular.module('dotjem.lessons')
+    .service('scriptLoader', [function () {
         var $service = {};
         var loaded = {};
 
@@ -19,4 +18,3 @@ angular.module('dotjem.routing.pages').service('scriptLoader', [function () {
 
         return $service;
     }]);
-//# sourceMappingURL=scriptLoader.js.map

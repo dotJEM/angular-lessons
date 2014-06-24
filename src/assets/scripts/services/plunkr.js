@@ -1,6 +1,6 @@
-/// <reference path="../_references.d.ts" />
-angular.module('dotjem.routing.pages').service('plunkr', [
-    '$document', function ($document) {
+angular.module('dotjem.lessons')
+    .service('plunkr', [    '$document',
+    function ($document) {
         function post(fields) {
             var form = angular.element('<form style="display: none;" method="post" action="http://plnkr.co/edit/?p=preview" target="_blank"></form>');
             angular.forEach(fields, function (value, name) {
@@ -31,4 +31,3 @@ angular.module('dotjem.routing.pages').service('plunkr', [
         };
     }
 ]);
-//# sourceMappingURL=plunkr.js.map

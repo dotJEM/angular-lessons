@@ -1,18 +1,20 @@
-var dotjem = angular.module('dotjem.lessons', ['dotjem.routing']);
+angular.module('dotjem.lessons', ['dotjem.routing']);
 
-dotjem.config(['$stateProvider', function(sp) {
+angular.module('dotjem.lessons')
+    .config(['$stateProvider', function(sp) {
     sp.state('home', {
         route: '/',
         views: {
             main: {
-
+                template: 'assets/templates/home.html'
             }
         }
     })
 
 }]);
 
-dotjem.controller('appController', ['$scope', function(scope){
+angular.module('dotjem.lessons')
+    .controller('appController', ['$scope', function(scope){
 
 
 

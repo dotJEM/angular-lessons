@@ -1,4 +1,5 @@
-dotjem.controller('dxSampleController', ['$scope', '$attrs', 'plunkr',
+angular.module('dotjem.lessons')
+    .controller('dxSampleController', ['$scope', '$attrs', 'plunkr',
     function ($scope, $attrs, plunkr) {
         var files = [];
         var tags = $.map(($attrs.tags || 'angularjs;angular-lessons').split(';'), function (item, index) {
@@ -49,7 +50,8 @@ dotjem.controller('dxSampleController', ['$scope', '$attrs', 'plunkr',
     }
 ]);
 
-dotjem.directive('dxSample', [
+angular.module('dotjem.lessons')
+    .directive('dxSample', [
     function () {
         return {
             restrict: 'ECA',
@@ -61,7 +63,8 @@ dotjem.directive('dxSample', [
     }
 ]);
 
-dotjem.directive('dxSampleFile', [
+angular.module('dotjem.lessons')
+    .directive('dxSampleFile', [
     '$http', '$q', '$compile',
     function ($http, $q, $compile) {
         return {

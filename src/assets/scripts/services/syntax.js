@@ -1,5 +1,5 @@
-/// <reference path="../_references.d.ts" />
-angular.module('dotjem.routing.pages').service('syntax', [
+angular.module('dotjem.lessons')
+    .service('syntax', [
     'scriptLoader',
     function (scriptLoader) {
         var $service = {};
@@ -65,4 +65,3 @@ angular.module('dotjem.routing.pages').service('syntax', [
         };
         return $service;
     }]);
-//# sourceMappingURL=syntax.js.map
