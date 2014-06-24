@@ -9,7 +9,6 @@
         "angular": "~1.2.18",
         "angular-resource": "~1.2.18",
         "angular-sanitize": "1.2.18",
-        "dotjem-angular-routing": "~0.6.2",
-        "ngInfiniteScroll": "~1.1.0"
+        "dotjem-angular-routing": "~0.6.2"
     }
 }

@@ -3,10 +3,10 @@ require 'bootstrap-sass'
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-sass_dir = "client/odiss/sass"
-css_dir = "client/odiss/styles"
-javascripts_dir = "client/odiss/scripts"
-images_dir = "client/odiss/images"
+sass_dir = "src/sass"
+css_dir = "src/assets/styles"
+javascripts_dir = "src/assets/scripts"
+images_dir = "src/assets/images"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

@@ -8,29 +8,28 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         banner: "",
-        clean: {
-            src: ['build']
-        },
 
         connect: {
-            watch: {
-                options: {
-                    port: 9500,
-                    base: '',
-                    keepalive: false
-                }
-            },
             keepalive: {
                 options: {
-                    port: 9500,
-                    base: '',
-                    keepalive: true
+                    port: 10000,
+                    base: 'src/'
+                }
+            }
+        },
+
+        compass: {
+            dist: {
+                options: {
+                    sassDir: 'src/sass',
+                    cssDir: 'src/assets/styles',
+                    outputStyle: 'compressed'
                 }
             }
         },
 
         watch: {
-            files: ['scripts/**/*.ts'],
+            files: ['src/**/*.*'],
             tasks: ['build']
         }
     });
@@ -43,13 +42,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-karma');
-    grunt.loadNpmTasks('grunt-ngdocs');
-    grunt.loadNpmTasks('grunt-tslint');
 
     // Default task.
-    grunt.registerTask('build', ['typescript']);
-    grunt.registerTask('default', ['server']);
-    grunt.registerTask('watch', ['connect', 'watch']);
-    grunt.registerTask('server', ['connect:keepalive']);
+    grunt.registerTask('build', ['compass']);
+    grunt.registerTask('dev', ['connect', 'watch']);
+    grunt.registerTask('default', ['build']);
 };
