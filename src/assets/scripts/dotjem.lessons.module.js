@@ -44,7 +44,13 @@ angular.module('dotjem.lessons')
 
         sp.state('lessons.forms.basic.slides', {
             route: '/slides',
-            resolve: { title: function() { return "Basic angular forms"; } },
+            resolve: {
+                slides: function() {
+                    return {
+                        title: "Basic angular forms"
+                    };
+                }
+            },
             views: {
                 'slide-show': {
                     template: 'assets/templates/lessons/slides.html',
@@ -140,12 +146,26 @@ angular.module('dotjem.lessons')
     }]);
 
 angular.module('dotjem.lessons')
-    .controller('slideShowController', ['$state', 'hotkeys', 'title',function (state, hotkeys, title) {
+    .controller('slideShowController', ['$state', 'hotkeys', 'slides',function (state, hotkeys, slides) {
         var self = this;
 
-        self.title = title;
+        self.title = slides.title;
 
         hotkeys.add('space', function() {
             state.goto('$node(1)');
+        });
+        hotkeys.add('right', function() {
+            state.goto('$node(1)');
+        });
+
+        hotkeys.add('ctrl+space', function() {
+            state.goto('$node(-1)');
+        });
+        hotkeys.add('left', function() {
+            state.goto('$node(-1)');
+        });
+
+        hotkeys.add('escape', function() {
+            state.goto('../..');
         });
     }]);
