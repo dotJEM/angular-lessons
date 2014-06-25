@@ -1,0 +1,37 @@
+<div class="page-header">
+    <h1>A full example:</h1>
+</div>
+<p>
+<pre dx-syntax class="brush: js">
+app.directive('dxExample', [function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attrs, ngModelCtrl) {
+            var format = scope.$eval(attrs.dxExample);
+            ngModelCtrl.$parsers.push(function(value) {
+                return str.substring(format.length + 1);
+            });
+
+            ngModelCtrl.$formatters.push(function(value) {
+                return format + ":" + value;
+            });
+
+            //Note: this is sort of concealed to the user, and it may have limitations
+            //      but it's fine for illustrative purposes.
+            scope.$watch(attrs.dxExample, function(newFormat) {
+                format = newFormat;
+                var viewValue = ngModelCtrl.$modelValue;
+                for (var i in ngModelCtrl.$formatters) {
+                    viewValue = ngModelCtrl.$formatters[i](viewValue);
+                }
+                ngModelCtrl.$viewValue = viewValue;
+                ngModelCtrl.$render();
+            });
+        }
+    }
+}]);
+</pre>
+</p>
+
+
+

@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h1>Considerations when building editors:</h1>
+</div>
+<pre dx-syntax class="brush: js">
+app.directive('badDir', function(){
+  return {
+    scope: {
+      mode: '=ngModel'
+    },
+    template: '<input type="text" class="form-control" placeholder="Bad input" ng-model="model">',
+    link: function(scope, elem, attr, ctrl) {
+
+    }
+  }
+})
+</pre>
+
+VS.
+
+<pre dx-syntax class="brush: js">
+app.directive('goodDir', function(){
+  return {
+    require: 'ngModel',
+    scope: { },
+    template: '<input type="text" class="form-control" placeholder="Bad input" ng-model="model">',
+    link: function(scope, elem, attr, ctrl) {
+      scope.$watch('model', function(value) {
+        ctrl.$setViewValue(value);
+      });
+      ctrl.$render = function() {
+          scope.model = ctrl.$viewValue;
+      };
+    }
+  }
+})
+</pre>

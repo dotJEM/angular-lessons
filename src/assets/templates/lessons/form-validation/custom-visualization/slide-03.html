@@ -1,0 +1,40 @@
+<div class="page-header">
+    <h1>Advanced visualization with directives:</h1>
+</div>
+<p>
+<pre dx-syntax class="brush: js">
+app.directive('dxErrorPopover', function($parse) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        compile: function(elm, attr) {
+        var textGetter = $parse(attr.dxErrorPopover);
+
+            return function(scope, elem, attr, ctrl) {
+                function showIfInvalid(){
+                  if(ctrl.$invalid){ element.popover('show'); }
+                  else { element.popover('hide'); }
+                }
+
+                element.focus(function(){
+                  showIfInvalid();
+                });
+
+                element.blur(function(){
+                  element.popover('hide');
+                });
+
+                element.popover({
+                  content: textGetter(scope),
+                  placement: 'top',
+                  trigger: 'manual'
+                });
+            }
+        }
+    };
+});
+</pre>
+</p>
+
+
+

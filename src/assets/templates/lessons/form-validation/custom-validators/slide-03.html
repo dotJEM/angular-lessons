@@ -1,0 +1,35 @@
+<div class="page-header">
+    <h1>A full example:</h1>
+</div>
+<p>
+<pre dx-syntax class="brush: js">
+app.directive('dxValidate', function($parse) {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        compile: function(elm, attr) {
+            var validateFn = $parse(attr.dxValidate);
+            return function(scope, elem, attr, ctrl) {
+                function validate(value){
+                    var isValid = validateFn(value);
+                    ctrl.$setValidity('validationName', isValid);
+                    return isValid;
+                }
+
+                ctrl.$parsers.unshift(function(value) {
+                    return validate(value) ? value : undefined;
+                });
+
+                ctrl.$formatters.unshift(function(value) {
+                    validate(value);
+                    return value;
+                });
+            }
+        }
+    };
+});
+</pre>
+</p>
+
+
+

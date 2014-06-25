@@ -1,0 +1,33 @@
+<div class="page-header">
+    <h1>Creating custom parsers and formatters:</h1>
+</div>
+<p>
+    <ul>
+        <li>
+            Validating values and propagating to form:
+            <pre dx-syntax class="brush: js">
+                function validate(value){
+                    var isValid = validateFn(value);
+                    ngModelCtrl.$setValidity('validationName', isValid);
+                    return isValid;
+                }
+            </pre>
+        </li>
+        <li>
+            Apply in parsers and formatters:
+            <pre dx-syntax class="brush: js">
+                ngModelCtrl.$parsers.unshift(function(value) {
+                    return validate(value) ? value : undefined;
+                });
+
+                ngModelCtrl.$formatters.unshift(function(value) {
+                    validate(value);
+                    return value;
+                });
+            </pre>
+        </li>
+    </ul>
+</p>
+
+
+

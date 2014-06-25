@@ -1,0 +1,39 @@
+<div class="page-header">
+    <h1>Creating custom parsers and formatters:</h1>
+</div>
+<p>
+    <ul>
+        <li>
+            Custom formatters:
+            <pre dx-syntax class="brush: js">
+                ngModelCtrl.$formatters.push(function(value) {
+                    return formatValue(value);
+                });
+            </pre>
+        </li>
+        <li>
+            Custom parsers:
+            <pre dx-syntax class="brush: js">
+                ngModelCtrl.$parsers.push(function(value) {
+                    return parseValue(value);
+                });
+            </pre>
+        </li>
+        <li>
+            When having dynamic parsers and formatters:
+            <pre dx-syntax class="brush: js">
+               scope.$watch('expression', function() {
+                    var viewValue = ngModelCtrl.$modelValue;
+                    for (var i in ngModelCtrl.$formatters) {
+                        viewValue = ngModelCtrl.$formatters[i](viewValue);
+                    }
+                    ngModelCtrl.$viewValue = viewValue;
+                    ngModelCtrl.$render();
+                });
+            </pre>
+        </li>
+    </ul>
+</p>
+
+
+

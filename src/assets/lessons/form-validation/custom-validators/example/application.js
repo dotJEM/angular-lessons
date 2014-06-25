@@ -20,19 +20,18 @@ app.directive('dxValidate', function($parse) {
         compile: function(elm, attr) {
             var validateFn = $parse(attr.dxValidate);
             return function(scope, elem, attr, ctrl) {
+                function validate(value){
+                    var isValid = validateFn(value);
+                    ctrl.$setValidity('validationName', isValid);
+                    return isValid;
+                }
+
                 ctrl.$parsers.unshift(function(value) {
-                    var valid = validateFn(scope, {
-                        $value: value
-                    });
-                    ctrl.$setValidity('onValidate', valid);
-                    return valid ? value : undefined;
+                    return validate(value) ? value : undefined;
                 });
 
                 ctrl.$formatters.unshift(function(value) {
-                    var valid = validateFn(scope, {
-                        $value: value
-                    });
-                    ctrl.$setValidity('onValidate', valid);
+                    validate(value);
                     return value;
                 });
             }
