@@ -146,7 +146,7 @@ angular.module('dotjem.lessons')
     }]);
 
 angular.module('dotjem.lessons')
-    .controller('slideShowController', ['$state', 'hotkeys', 'slides',function (state, hotkeys, slides) {
+    .controller('slideShowController', ['$state', 'hotkeys', 'slides', '$scope',function (state, hotkeys, slides, scope) {
         var self = this;
 
         self.title = slides.title;
@@ -167,5 +167,13 @@ angular.module('dotjem.lessons')
 
         hotkeys.add('escape', function() {
             state.goto('../..');
+        });
+
+        scope.$on('$destroy', function() {
+            hotkeys.del('space');
+            hotkeys.del('right');
+            hotkeys.del('ctrl+space');
+            hotkeys.del('left');
+            hotkeys.del('escape');
         });
     }]);
