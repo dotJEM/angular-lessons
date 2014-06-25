@@ -1,0 +1,15 @@
+<div class="page-header">
+    <h1>Considerations when building editors:</h1>
+</div>
+<p>
+<ul>
+    <li><code>scope: { ngModel: '=' }</code> is bad.</li>
+    <li><code>require: 'ngModel'</code> is good</li>
+    <li>When we see <code><div ng-model="bind"></div></code>
+        we assume that we can get an ngModelController on that element
+        but using the first way breaks that expectation.
+    </li>
+</ul>
+
+
+

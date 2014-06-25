@@ -1,0 +1,34 @@
+<div class="page-header">
+    <h1>Creating a simple form:</h1>
+</div>
+<p>
+    <pre dx-syntax class="brush: html">
+        <form name="formName" novalidate>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Start date" required ng-model="ctrl.start">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="End date" required ng-model="ctrl.end">
+            </div>
+        </form>
+    </pre>
+</p>
+<p><hr/></p>
+<p>Example:</p>
+<form name="formName" novalidate>
+    <div class="form-group">
+        <input type="text" name="startDate" class="form-control" required placeholder="Start date" ng-model="ctrl.start">
+    </div>
+    <div class="form-group">
+        <input type="text" name="endDate" class="form-control" required placeholder="End date" ng-model="ctrl.end">
+    </div>
+    <dl class="dl-horizontal slides-dl-horizontal">
+        <dt>formName.$valid:</dt>
+        <dd ng-bind="formName.$valid"></dd>
+        <dt>formName.startDate.$valid:</dt>
+        <dd ng-bind="formName.startDate.$valid"></dd>
+        <dt>formName.startDate.$valid:</dt>
+        <dd ng-bind="formName.endDate.$valid"></dd>
+    </dl>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>

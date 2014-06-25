@@ -1,0 +1,29 @@
+.slides {
+  padding: 60px;
+  font-size: 42px;
+
+  .slides-dl-horizontal {
+    font-size: 21px;
+    dt {
+      width: 320px;
+    }
+    dd{
+      margin-left: 340px;
+    }
+  }
+
+  .slides-dl-horizontal-narrow {
+    font-size: 21px;
+    dt {
+      width: 220px;
+    }
+    dd{
+      margin-left: 240px;
+    }
+  }
+
+  h1{ font-size: 60px;  }
+  h2{ font-size: 55px;  }
+  h3{ font-size: 50px;  }
+  h4{ font-size: 45px;  }
+}

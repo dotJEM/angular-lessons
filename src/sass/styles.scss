@@ -10,12 +10,6 @@ body {
   padding-bottom: 32px;
 }
 
-.logo {
-  display: inline-block;
-  background: url('/assets/images/dotJEMLogo2.svg') no-repeat 0 0;
-  @include background-size(contain);
-}
-
 hr {
   height: 1px;
   border: 0;
@@ -35,6 +29,7 @@ hr {
 
 @import "core/navbar";
 @import "core/sidebar";
+@import "slides/slides";
 @import "dxsample/dxsample";
 @import "dxsyntax/dxsyntax";
 

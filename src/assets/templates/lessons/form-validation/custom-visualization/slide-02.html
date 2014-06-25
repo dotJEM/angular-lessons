@@ -1,0 +1,50 @@
+<div class="page-header">
+    <h1>Basic visualization with angular classes:</h1>
+</div>
+
+Angular automatically attaches classes to input elements and forms.
+<pre dx-syntax class="brush: css">
+    .ng-pristine { border:1px solid Gold; }
+    .ng-dirty.ng-valid { color:green; }
+    .ng-dirty.ng-invalid { color:red; }
+</pre>
+Again:
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <td>Property</td>
+        <td>Class</td>
+        <td>Description</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="success">$valid</td>
+        <td>ng-valid</td>
+        <td><code>Boolean</code> true if valid, otherwise false.</td>
+    </tr>
+    <tr>
+        <td class="danger">$invalid</td>
+        <td>ng-invalid</td>
+        <td><code>Boolean</code> true if invalid, otherwise false.</td>
+    </tr>
+    <tr>
+        <td class="info">$pristine</td>
+        <td>ng-pristine</td>
+        <td><code>Boolean</code> true if the form/input <strong>has not</strong> changed.</td>
+    </tr>
+    <tr>
+        <td class="warning">$dirty</td>
+        <td>ng-dirty</td>
+        <td><code>Boolean</code> true if the form/input <strong>has</strong> changed.</td>
+    </tr>
+    <tr>
+        <td class="success">custom</td>
+        <td>ng-invalid-custom</td>
+        <td><code>ngModelCtrl.$setValidity('custom', false);</code></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
