@@ -1,7 +1,3 @@
-/**
- * Created by jmd on 05-02-14.
- */
-/*global module:false*/
 module.exports = function (grunt) {
     "use strict";
     // Project configuration.

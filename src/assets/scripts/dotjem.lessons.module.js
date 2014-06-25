@@ -1,4 +1,4 @@
-angular.module('dotjem.lessons', ['dotjem.routing']);
+angular.module('dotjem.lessons', ['dotjem.routing', 'cfp.hotkeys']);
 
 angular.module('dotjem.lessons')
     .config(['$stateProvider', function (sp) {
@@ -37,6 +37,54 @@ angular.module('dotjem.lessons')
             views: {
                 content: {
                     template: 'assets/templates/lessons/form-validation/basic-forms/basic-forms.html'
+
+                }
+            }
+        });
+
+        sp.state('lessons.forms.basic.slides', {
+            route: '/slides',
+            resolve: { title: function() { return "Basic angular forms"; } },
+            views: {
+                'slide-show': {
+                    template: 'assets/templates/lessons/slides.html',
+                    controller: 'slideShowController as slides'
+                }
+            }
+        });
+
+        sp.state('lessons.forms.basic.slides.slide1', {
+            route: '/1',
+            views: {
+                slide: {
+                    template: '<h1>HELLO SLIDES 1</h1>'
+                }
+            }
+        });
+
+        sp.state('lessons.forms.basic.slides.slide2', {
+            route: '/2',
+            views: {
+                slide: {
+                    template: '<h1>HELLO SLIDES 2</h1>'
+                }
+            }
+        });
+
+        sp.state('lessons.forms.basic.slides.slide3', {
+            route: '/3',
+            views: {
+                slide: {
+                    template: '<h1>HELLO SLIDES 3</h1>'
+                }
+            }
+        });
+
+        sp.state('lessons.forms.basic.slides.slide4', {
+            route: '/4',
+            views: {
+                slide: {
+                    template: '<h1>HELLO SLIDES 4</h1>'
                 }
             }
         });
@@ -89,4 +137,15 @@ angular.module('dotjem.lessons')
 
 angular.module('dotjem.lessons')
     .controller('appController', ['$scope', function (scope) {
+    }]);
+
+angular.module('dotjem.lessons')
+    .controller('slideShowController', ['$state', 'hotkeys', 'title',function (state, hotkeys, title) {
+        var self = this;
+
+        self.title = title;
+
+        hotkeys.add('space', function() {
+            state.goto('$node(1)');
+        });
     }]);

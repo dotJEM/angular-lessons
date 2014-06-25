@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-hide="('lessons.forms.basic.slides'| isActiveState)">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
                 <h3>Form validation</h3>
@@ -15,4 +15,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 lesson-content" jem-view="content">
         </div>
     </div>
+</div>
+
+<div class="container-fluid" jem-view="slide-show" ng-show="('lessons.forms.basic.slides'| isActiveState)">
 </div>
