@@ -39,7 +39,7 @@ angular.module('dotjem.lessons')
                 args[_i] = arguments[_i + 1];
             }
             for (var i = 0; i < args.length; i++) {
-                brushmapping[args[i]] = '/assets/lib/locals/syntaxhighlight/' + file;
+                brushmapping[args[i]] = 'angular-lessons/assets/lib/locals/syntaxhighlight/' + file;
             }
         }
 
