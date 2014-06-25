@@ -1,0 +1,21 @@
+{
+  "name": "dotjem-angular-routing",
+  "version": "0.6.2",
+  "main": [
+    "build/angular-routing.min.js",
+    "build/angular-routing.js"
+  ],
+  "dependencies": {
+    "angular": ">= 1.2"
+  },
+  "homepage": "https://github.com/dotJEM/angular-routing",
+  "_release": "0.6.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.6.2",
+    "commit": "e691c82e21793d9304cd0c1d587b5215e82231d0"
+  },
+  "_source": "git://github.com/dotJEM/angular-routing.git",
+  "_target": "~0.6.2",
+  "_originalSource": "dotjem-angular-routing"
+}

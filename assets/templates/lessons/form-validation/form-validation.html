@@ -1,0 +1,21 @@
+<div class="container-fluid" ng-hide="('lessons.forms.basic.slides'| isActiveState)">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+                <h3>Form validation</h3>
+
+            <ul class="nav nav-sidebar">
+                <li ng-class="{ active: ('lessons.forms.basic'| isActiveState) }"><a sref="'lessons.forms.basic'">Basic forms</a></li>
+                <li ng-class="{ active: ('lessons.forms.formatters'| isActiveState) }"><a sref="'lessons.forms.formatters'">Custom formatters and parsers</a></li>
+                <li ng-class="{ active: ('lessons.forms.validators'| isActiveState) }"><a sref="'lessons.forms.validators'">Custom validators</a></li>
+                <li ng-class="{ active: ('lessons.forms.editors'| isActiveState) }"><a sref="'lessons.forms.editors'">Custom editor directives</a></li>
+                <li ng-class="{ active: ('lessons.forms.visualization'| isActiveState) }"><a sref="'lessons.forms.visualization'">Custom visualization</a></li>
+                <li ng-class="{ active: ('lessons.forms.dynamic'| isActiveState) }"><a sref="'lessons.forms.dynamic'">Dynamic forms</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 lesson-content" jem-view="content">
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" jem-view="slide-show" ng-show="('lessons.forms.basic.slides'| isActiveState)">
+</div>
