@@ -1,7 +1,9 @@
 <div class="jumbotron">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-8" ng-bind="slides.title" style="font-weight: bold; font-size: 36px;"></div>
+            <div class="col-sm-8" style="font-weight: bold; font-size: 36px;">
+                {{ slides.title }}
+            </div>
             <div class="col-sm-4">
                 <div class="pull-right">
                     <a sref="'$node(-1)'" class="btn btn-default">
@@ -18,4 +20,5 @@
         </div>
     </div>
 </div>
-<div jem-view="slide"></div>
+<div class="slides" jem-view="slide">
+</div>

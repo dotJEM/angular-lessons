@@ -8,6 +8,7 @@ module.exports = function (grunt) {
         connect: {
             keepalive: {
                 options: {
+                    hostname: 'PC-2985',
                     port: 10000,
                     base: 'src/'
                 }
